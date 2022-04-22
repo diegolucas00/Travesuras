@@ -11,6 +11,7 @@ package ClaseDAO;
 public class PedidoProductos {
     private int Id;
     private int FRPedido;
+    private int FRProducto;
     private int CantidadPaquete;
     private int CantidadUnidad;
     private String Producto;
@@ -18,12 +19,21 @@ public class PedidoProductos {
     public PedidoProductos() {
     }
 
-    public PedidoProductos(int Id, int FRPedido, int CantidadPaquete, int CantidadUnidad, String Producto) {
+    public PedidoProductos(int Id, int FRPedido, int FRProducto, int CantidadPaquete, int CantidadUnidad, String Producto) {
         this.Id = Id;
         this.FRPedido = FRPedido;
+        this.FRProducto = FRProducto;
         this.CantidadPaquete = CantidadPaquete;
         this.CantidadUnidad = CantidadUnidad;
         this.Producto = Producto;
+    }
+    
+    public int getFRProducto() {
+        return FRProducto;
+    }
+
+    public void setFRProducto(int FRProducto) {
+        this.FRProducto = FRProducto;
     }
 
     public int getId() {
