@@ -74,6 +74,10 @@
         <servlet-name>Traercompra</servlet-name>
         <servlet-class>Controlador.Traercompra</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RegistroPago</servlet-name>
+        <servlet-class>Controlador.RegistroPago</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ListaCategorias</servlet-name>
         <url-pattern>/ListaCategorias</url-pattern>
@@ -141,6 +145,10 @@
     <servlet-mapping>
         <servlet-name>Traercompra</servlet-name>
         <url-pattern>/Traercompra</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegistroPago</servlet-name>
+        <url-pattern>/RegistroPago</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

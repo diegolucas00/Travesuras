@@ -25,13 +25,13 @@ public class FacturaDAO extends Conexion.Conexion {
     public JsonArray ListadoFactura() {
         JsonArray listadoeven = new JsonArray();
         Factura factura;
-        String sentencia = "SELECT * FROM factura;";
+        String sentencia = "SELECT * FROM factura Where Estado='Pendiente';";
         if (this.Connexion()) {
             try {
                 PST = super.sentences(sentencia);
                 ResultSet res = PST.executeQuery();
                 while (res.next()) {
-                    factura = new Factura(res.getInt("Id_Factura"),res.getString("Cliente"),res.getFloat("Valor"));
+                    factura = new Factura(res.getInt("Id_Factura"),res.getString("Cliente"),res.getFloat("Valor"), res.getString("Estado"));
                     listadoeven.add(new Gson().toJsonTree(factura));
                 }
                 super.cerrar();
@@ -45,5 +45,32 @@ public class FacturaDAO extends Conexion.Conexion {
         }
 
         return listadoeven;
+    }
+     public String RegistroPago( Factura Fact) {
+        String resultado = "Error";
+        String sentencia = "UPDATE `factura` SET "
+                + "`Estado='Pago'"
+                + " WHERE Id_Factura = ?";
+        if (this.Connexion()) {
+            try {
+                PST = super.sentences(sentencia);
+                PST.setString(1, Integer.toString(Fact.getId_Factura()));
+                if (!PST.execute()) {
+                    resultado = "OK";
+                } else {
+                    resultado = "Error al registrarlo";
+                }
+
+                super.cerrar();
+            } catch (SQLException ex) {
+                resultado = String.valueOf(ex);
+            }
+
+        } else {
+            error = "Error con la conexion a la base de datos, verifique conexion";
+            resultado = error;
+        }
+
+        return resultado;
     }
 }

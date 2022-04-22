@@ -13,14 +13,16 @@ public class Factura {
     private int Id_Factura;
     private String Cliente;
     private Float Valor;
+    private String Estado;
     
     public Factura() {
     }
     
-    public Factura(int Id_Factura,  String Cliente, Float Valor) {
+    public Factura(int Id_Factura,  String Cliente, Float Valor,String Estado) {
         this.Id_Factura = Id_Factura;
         this.Cliente = Cliente;
         this.Valor = Valor;
+        this.Estado= Estado;
     }
 
     public int getId_Factura() {
@@ -46,6 +48,14 @@ public class Factura {
     public void setValor(Float Valor) {
         this.Valor = Valor;
     }
-    
+
+    public String getEstado() {
+        return Estado;
+    }
+
+    public void setEstado(String Estado) {
+        this.Estado = Estado;
+    }
+
     
 }

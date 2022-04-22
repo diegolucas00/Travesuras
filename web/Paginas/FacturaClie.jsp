@@ -17,6 +17,7 @@
                     <td scope="col">Id_Factura</td>
                     <td scope="col">Cliente</td>
                     <td scope="col">Valor</td>
+                    <td scope="col">Estado</td>
                     <td scope="col">Accion</td>
                 </tr>
             </thead>

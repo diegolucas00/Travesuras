@@ -55,13 +55,16 @@ $(document).ready(function () {
                 td3.html(elemento.Valor);
                 tr.append(td3);
                 let td4 = $("<td>");
+                td4.html(elemento.Estado);
+                tr.append(td4);
+                let td5 = $("<td>");
                 let btn = $("<button>");
                 btn.addClass("btn btn-success");
                 btn.html("Pago Completo");
-                td4.append(btn);
-                tr.append(td4);
+                td5.append(btn);
+                tr.append(td5);
                 btn.click(function () {
-                    PedidoCompleto(elemento.Id);
+                    RegistarPedido();
                 });
                 $("#TablaClitbody").append(tr);
             });
@@ -70,4 +73,18 @@ $(document).ready(function () {
         ajax(ir_a, llevar, hacer);
     };
     
+    const RegistarPedido = () => {
+         $("#datos").html(data);
+        let Id_Factura = "";
+        $(".datosId_Factura").each(function () {
+            ID += $(this).val() + ";";
+        });
+        let ir_a = "RegistroPago";
+        let llevar = {
+            id: Id_Factura,
+        };
+        ajax(ir_a, llevar, hacer);
+    };
+    
+ 
 });
