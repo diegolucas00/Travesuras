@@ -4,6 +4,7 @@
  */
 package Controlador;
 
+import ClaseDAO.FacturaDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -61,7 +62,8 @@ public class Traercompra extends HttpServlet {
         processRequest(request, response);
         try ( PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            
+            FacturaDAO facturadao = new FacturaDAO();
+             out.print(facturadao.ListadoFactura().toString());
         }
     }
 

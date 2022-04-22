@@ -27,6 +27,7 @@ Author     : ADMIN
         <script src="Recursos/js/jquery.validate.js" type="text/javascript"></script>
         <script src="Recursos/js/jquery.validate.min.js" type="text/javascript"></script>
         <script src="Recursos/js/RegistrarProveedor.js" type="text/javascript"></script>   
+        <script src="Recursos/js/Traercompra.js" type="text/javascript"></script>  
         <script src="Recursos/select/js/bootstrap-multiselect.js" type="text/javascript"></script>
         <script src="Recursos/select/js/select2.js" type="text/javascript"></script>
         <script src="Recursos/js/Pedido.js" type="text/javascript"></script>
@@ -67,7 +68,7 @@ Author     : ADMIN
                     </li>                    
                     <li class="nav-item"  id="btnMenuP5">
                         <div class="d-flex justify-content-center" id="DivEstadobtn5">
-                            <button class="btn btnMenuP" id="Estadobtn5"><img src="Imagenes/Factura.png"></button>                        
+                            <button class="btn btnMenuP" id="Estadobtn5"><img src="Imagenes/Facturacion.png"></button>                        
                         </div>  
                         <div class="d-flex justify-content-center" id="btnMenuP5D">
                             <p class="Texto" id="Texto5">Factura Pedido</p>         

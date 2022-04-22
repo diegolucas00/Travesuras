@@ -25,6 +25,49 @@ $(document).ready(function () {
             }
         });
     };
-    
+        $("#Estadobtn6").click(function () {
+        ListaFacturaT();
+    });
+
+    const ListaFacturaT = () => {
+        let ir_a = "Paginas/FacturaClie.jsp";
+        let llevar;
+        let hacer = (data) => {
+            $("#datos").html(data);
+            ListaFactura2();
+        };
+        ajax(ir_a, llevar, hacer);
+    };
+    const ListaFactura2 = () => {
+        let ir_a = "Traercompra";
+        let llevar;
+        let hacer = (data) => {
+            const dato = JSON.parse(data);
+            dato.forEach(elemento => {
+                let tr = $("<tr>");
+                let td = $("<td>");
+                td.html(elemento.Id_Factura);
+                tr.append(td);
+                let td2 = $("<td>");
+                td2.html(elemento.Cliente);
+                tr.append(td2);
+                let td3 = $("<td>");
+                td3.html(elemento.Valor);
+                tr.append(td3);
+                let td4 = $("<td>");
+                let btn = $("<button>");
+                btn.addClass("btn btn-success");
+                btn.html("Pago Completo");
+                td4.append(btn);
+                tr.append(td4);
+                btn.click(function () {
+                    PedidoCompleto(elemento.Id);
+                });
+                $("#TablaClitbody").append(tr);
+            });
+            $("#TablaCli").dataTable();
+        };
+        ajax(ir_a, llevar, hacer);
+    };
     
 });
