@@ -37,6 +37,10 @@ $(document).ready(function () {
             $("#datos").html(data);
             $(".btnMenuP").removeClass("Activo");
             $("#Estadobtn5").addClass("Activo");
+            let btn = $("<button>");
+            btn.addClass("btn btn-info");
+            btn.html("ver Facturas");
+            $("#facturadiv").append(btn);
             ListadoPedidoT2();
         };
         ajax(ir_a, llevar, hacer);
@@ -287,7 +291,7 @@ $(document).ready(function () {
             TOTALTAL: TOTALTAL,
             IVAT: IVAT,
             TOTALT: TOTALT,
-            Pedido:Pedido
+            Pedido: Pedido
         };
         let hacer = (data) => {
             if (data === "OK") {
